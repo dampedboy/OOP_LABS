@@ -9,6 +9,8 @@ package hydraulic;
 
 public class Tap extends Element {
 
+	private boolean open;
+
 	public Tap(String name) {
 		super(name);
 		//TODO: complete
@@ -20,7 +22,14 @@ public class Tap extends Element {
 	 * @param open  opening level
 	 */
 	public void setOpen(boolean open){
-		//TODO: complete
+		this.open = open;
+	}
+
+	@Override
+	void simulate(double inFlow, SimulationObserver observer) {
+		double outFlow = open ? inFlow : 0.0;
+		observer.notifyFlow("Tap", getName(), inFlow, outFlow);
+		getOutput().simulate(outFlow, observer);
 	}
 
 }

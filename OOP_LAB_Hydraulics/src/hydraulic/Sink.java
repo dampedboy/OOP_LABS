@@ -15,4 +15,16 @@ public class Sink extends Element {
 		//TODO: complete
 	}
 	
+	@Override
+	public void connect(Element elem) {
+		
+	}
+
+	@Override
+	void simulate(double inFlow, SimulationObserver observer) {
+		observer.notifyFlow("Sink", getName(), inFlow, SimulationObserver.NO_FLOW);
+		
+	}
+
+	
 }

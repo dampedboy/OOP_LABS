@@ -42,10 +42,13 @@ public class ExampleTest {
 		r.connect(t);
 		t.connect(sink1,0);
 		t.connect(sink2,1);
+//		
+//		assertSame("Output of src should be r",r,src.getOutput());
+//		assertSame("Output of src should be r",t,r.getOutput());
+//		assertSame("Output of src should be r",sink1,t.getOutputs()[0]);
+//		assertSame("Output of src should be r",sink2,t.getOutputs()[1]);
 		
-		assertSame("Output of src should be r",r,src.getOutput());
-		
-		// 3) simulation parameters are then defined
+//		// 3) simulation parameters are then defined
 		src.setFlow(20);
 		r.setOpen(true);
 		
